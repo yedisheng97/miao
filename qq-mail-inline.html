@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    html{
+      height: 100%;
+    }
+
+    body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-size: 0;
+
+    }
+
+
+    .top{
+      background-color: antiquewhite;
+      height: 100px;
+    }
+
+    .left{
+      display: inline-block;
+      background-color: aqua;
+      width: 200px;
+      height: calc(100vh - 100px);
+      font-size: 16px;
+      overflow-y: scroll;
+      box-sizing: border-box;
+    }
+
+    .main{
+      display: inline-block;
+      background-color: aquamarine;
+      height: calc(100vh - 100px);
+      width: calc(100% - 200px);
+      font-size: 16px;
+      overflow: hidden;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+
+
+
+      <span class="left">left</span>
+
+      <span class="main">main</span>
+
+
+
+</body>
+</html>
