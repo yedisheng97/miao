@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+    }
+
+    html{
+      height: 100%;
+    }
+
+    body{
+      height: 100%;
+      min-width: 930px;
+      overflow-y: overlay;
+    }
+
+    span{
+      display: inline-block;
+      font-size: 30px;
+    }
+
+    .span1, .span3, .span4{
+      background-color: aquamarine;
+      height: 100%;
+      width: 300px;
+
+      text-align: center;
+    }
+
+    .span1{
+      overflow-y: scroll;
+    }
+
+    .span2{
+      width: calc(100vw - 901px);
+      height: 100%;
+      background-color: beige;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      overflow: hidden;
+      box-sizing: border-box;
+      min-width: 300px;
+    }
+
+    .span3{
+      border-right: 1px solid black;
+      overflow: hidden;
+    }
+
+    .span4{
+      overflow: hidden;
+
+    }
+
+    .down{
+      margin-top: 10px;
+      border-top: 1px solid;
+      overflow-y: scroll;
+      height: 100%;
+    }
+
+
+  </style>
+</head>
+<body>
+  <span class="span1">OALD Se7en</span>
+  <span class="span2">
+    <span class="up">fantasy</span>
+    <span class="down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit magnam reprehenderit commodi minima rerum! Harum sint quo rem, similique libero, sed omnis odit tempora porro explicabo voluptate ipsam excepturi a.</span>
+  </span>
+  <span class="span3">Vocabulary</span>
+  <span class="span4">Historygasgas</span>
+</body>
+</html>
