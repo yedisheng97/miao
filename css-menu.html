@@ -23,16 +23,13 @@
     }
 
     .nav ul li{
-      margin: 10px 0;
       width: 101.16px;
       height: 44px;
-      border-radius: 4px;
       float: left;
       display: block;
       font-size: 16px;
-      line-height: 50px;
+      line-height: 60px;
       text-align: center;
-
     }
 
     .nav li a{
@@ -41,6 +38,7 @@
 
     }
 
+  /* 下拉框 */
     .nav li .down{
       width: 293.81px;
       height: 538.24px;
@@ -52,12 +50,65 @@
       display: none;
     }
 
+    /* 下拉框每一条 */
     .nav .down-bar{
       color: #fff;
       width: 294px;
       height: 74.32px;
     }
 
+    .nav .down-bar2{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+    }
+
+    .nav .down-bar3{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+      top: 148.64px;
+    }
+
+    .nav .down-bar4{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+      top: 222.96px;
+    }
+
+    .nav .down-bar5{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+      top: 297.28px;
+    }
+
+    .nav .down-bar6{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+      top: 371.6px;
+    }
+
+    .nav .down-bar7{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+      position: absolute;
+      top: 445.92px;
+    }
+
+
+
+
+
+    /* 下拉框文本 */
     .nav li .big{
       font-size: 13.328px;
       position: absolute;
@@ -72,6 +123,8 @@
       top: 25px;
     }
 
+
+    /* 竖杠 */
     .nav .down-bar::before{
       content: '';
       width: 3.2px;
@@ -79,9 +132,79 @@
       background-color: #ff707fb3;
       position: absolute;
       left: 8px;
-      top: 24px;
+      top: 28px;
       margin-left: 8px;
     }
+
+    .nav .down-bar2::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #8CB4FF;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+    .nav .down-bar3::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #837908;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+    .nav .down-bar4::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #088843;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+    .nav .down-bar5::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #8269BB;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+    .nav .down-bar6::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #65e2e8;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+    .nav .down-bar7::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #dbc65d;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+    }
+
+
+
+
 
     .nav li:hover .down{
       display: block;
@@ -95,13 +218,41 @@
 
     .nav .down-bar:hover{
       background-color: #343434;
-
     }
 
-    .e{
+    .nav .down-bar2:hover{
+      background-color: #343434;
+    }
+
+    .nav .down-bar3:hover{
+      background-color: #343434;
+    }
+
+    .nav .down-bar4:hover{
+      background-color: #343434;
+    }
+
+    .nav .down-bar5:hover{
+      background-color: #343434;
+    }
+
+    .nav .down-bar6:hover{
+      background-color: #343434;
+    }
+
+    .nav .down-bar7:hover{
+      background-color: #343434;
+    }
+
+
+
+
+
+
+    .e, .f, .g, .h, .i, .j, .k{
       background-color: #1e1e1e;
-      font-size: 50px;
-      line-height: 400px;
+      font-size: 30px;
+      line-height: 200px;
       width: 200px;
       height: 400px;
       position: absolute;
@@ -114,7 +265,54 @@
       display: none;
     }
 
+    .f{
+      top: 74.32px;
+    }
+
+    .g{
+      top: 148.64px;
+    }
+
+    .h{
+      top: 222.96px;
+    }
+
+    .i{
+      top: 297.28px;
+    }
+
+    .j{
+      top: 371.6px;
+    }
+
+    .k{
+      top: 445.92px;
+    }
+
+
     .nav .down .d:hover .e{
+      display: block;
+    }
+
+    .nav .down .d:hover .f{
+      display: block;
+    }
+    .nav .down .d:hover .g{
+      display: block;
+    }
+
+    .nav .down .d:hover .h{
+      display: block;
+    }
+    .nav .down .d:hover .i{
+      display: block;
+    }
+
+    .nav .down .d:hover .j{
+      display: block;
+    }
+
+    .nav .down .d:hover .k{
       display: block;
     }
 
@@ -138,8 +336,62 @@
                 <div class="big">HTML</div>
                 <div class="small">Structure of content on the web</div>
               </div>
-              <div class="e">hello</div>
+              <div class="e">HTML</div>
             </a>
+
+            <a class="d" href="#">
+
+              <div class="down-bar2">
+                <div class="big">CSS</div>
+                <div class="small">Code used to describe document style</div>
+              </div>
+              <div class="f">CSS</div>
+            </a>
+
+            <a class="d" href="#">
+
+              <div class="down-bar3">
+                <div class="big">JavaScript</div>
+                <div class="small">General-purpose scripting language</div>
+              </div>
+              <div class="g">JavaScript</div>
+            </a>
+
+             <a class="d" href="#">
+
+              <div class="down-bar4">
+                <div class="big">HTTP</div>
+                <div class="small">Protocol for transmitting web resources</div>
+              </div>
+              <div class="h">HTTP</div>
+            </a>
+
+            <a class="d" href="#">
+
+              <div class="down-bar5">
+                <div class="big">Web APIs</div>
+                <div class="small">Interfaces for building web applications</div>
+              </div>
+              <div class="i">Web APIs</div>
+            </a>
+
+            <a class="d" href="#">
+
+              <div class="down-bar6">
+                <div class="big">Web Extensions</div>
+                <div class="small">Deceloping extensions for web browsers</div>
+              </div>
+              <div class="j">Web Extensions</div>
+            </a>
+            <a class="d" href="#">
+
+              <div class="down-bar7">
+                <div class="big">Web Technology</div>
+                <div class="small">Web technology reference for developers</div>
+              </div>
+              <div class="k">Web Technology</div>
+            </a>
+
           </div>
         </a>
       </li>
