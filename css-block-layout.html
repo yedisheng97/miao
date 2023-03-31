@@ -64,37 +64,46 @@
       background-color: aqua;
     }
 
-    .box3{
-      width: 640px;
-      height: 240px;
-      margin: 20px auto;
+
+
+    .box3 {
+      /* background-color: rgb(122, 174, 104); */
+      width: 600px;
+      margin: auto;
+      overflow: hidden;
     }
 
-    .box3 span{
-      display: inline-block;
+    .box3 ul{
+      list-style: none;
+      padding: 0;
+      font-size: 0;
+      margin: auto;
+      margin: -8px -15px;
+/*
+      margin-top: -8px;
+      margin-bottom: -8px;
+      margin-left: -15px;
+      margin-right: -15px; */
+
+    }
+
+    .box3 ul li{
+      font-size: 16px;
       width: 180px;
       height: 40px;
-      background-color: rgb(120, 147, 197);
-      margin-bottom: 15px ;
-      margin-right: 15px;
-      margin-left: 15px;
-      border: 1px solid black;
+      border: 2px solid black;
       box-sizing: border-box;
-      line-height: 34px;
+      display: inline-block;
+      margin: 8px 15px;
       text-align: center;
+      line-height: 34px;
+      background-color: rgb(132, 225, 225);
     }
 
-    .box3 span:hover{
-      background-color: rgb(99, 235, 158);
+
+    .box3 ul li:hover{
+      background-color: rgb(50, 134, 207);
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -112,7 +121,7 @@
     }
 
     .p3{
-      background:linear-gradient(45deg, blue,#ff6700, gold);
+      background-color: bisque;
       text-align: center;
     }
 
@@ -146,21 +155,23 @@
   </div>
 
 
-  <div class="box3">
-    <span>宽180高40(包含边框)</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>水平间隙30px</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>垂直间隙15px</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>边框宽度3px</span>
-    <span>产品</span>
-    <span>产品</span>
-  </div>
 
+<div class="box3">
+  <ul>
+    <li>宽180高40(包含边框)</li>
+    <li>水平间隙30px</li>
+    <li>垂直间隙15px</li>
+    <li>边框宽度3px</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+    <li>产品</li>
+  </ul>
+</div>
 
 
   <p class="p1">link</p>
