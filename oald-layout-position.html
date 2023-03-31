@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    html, body{
+      margin: 0;
+      height: 100%;
+      font-size: 0;
+    }
+
+    .all{
+      text-align: center;
+      font-size: 16px;
+      min-width: 930px;
+    }
+
+    .left, .right1, .right2{
+      position: absolute;
+      width: 200px;
+      height: 100%;
+      background-color: rgb(64, 144, 117);
+    }
+
+    .middle{
+      position: absolute;
+      width: calc(100% - 600px);
+      height: 100%;
+      background-color: rgb(120, 193, 193);
+      left: 200px;
+      box-sizing: border-box;
+      min-width: 200px;
+    }
+
+    .left{
+      overflow-y: scroll;
+    }
+
+    .middle{
+      border-left: 1px solid black;
+    }
+
+    .middle .header{
+      height: 100px;
+      background-color: bisque;
+    }
+
+    .middle .down{
+      height: calc(100% - 100px);
+      overflow-y: scroll;
+      border-top: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .right1{
+      right: 200px;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+
+    .right2{
+      right: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="all">
+    <div class="left">left</div>
+
+    <div class="middle">
+      <div class="header">header</div>
+      <div class="down">down</div>
+    </div>
+
+    <div class="right1">right1</div>
+    <div class="right2">right2</div>
+  </div>
+</body>
+</html>
