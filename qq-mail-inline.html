@@ -7,7 +7,7 @@
   <title>Document</title>
   <style>
 
-    html{
+    /* html{
       height: 100%;
     }
 
@@ -42,22 +42,72 @@
       width: calc(100% - 200px);
       font-size: 16px;
       overflow: hidden;
+    } */
+
+
+    html, body{
+      height: 100%;
+      margin: 0;
     }
 
+    .wrapper{
+      height: 100%;
+      min-width: 500px;
+    }
 
+    .header{
+      height: 100px;
+      background-color: rgb(144, 180, 168);
+      border-bottom: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .down{
+      height: calc(100% - 100px);
+      /* background-color: rgb(160, 196, 229); */
+      font-size: 0;
+    }
+
+    .down *{
+      font-size: 16px;
+    }
+
+    .down .left{
+      display: inline-block;
+      width: 150px;
+      height: 100%;
+      background-color: rgb(159, 217, 217);
+      overflow-y: scroll;
+    }
+
+    .down .main{
+      display: inline-block;
+      width: calc(100% - 150px);
+      height: 100%;
+      background-color: antiquewhite;
+      vertical-align: top;
+      overflow-y: scroll;
+    }
 
   </style>
 </head>
 <body>
 
-    <div class="top"></div>
-
-
-
+    <!-- <div class="top"></div>
 
       <span class="left">left</span>
 
-      <span class="main">main</span>
+      <span class="main">main</span> -->
+
+
+<div class="wrapper">
+  <div class="header">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus ea eum adipisci deserunt, quae quaerat earum, vitae asperiores, dicta nostrum doloribus repellat recusandae ipsa? Illum amet quas saepe quia deserunt.</div>
+  <div class="down">
+    <div class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptas quae aperiam suscipit accusantium. Ducimus in laboriosam fugiat? Temporibus quis cum hic. Magni adipisci asperiores quasi minus perferendis quos labore.</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius aspernatur ducimus ad eveniet consequuntur nam facilis optio saepe eos, tempora recusandae ut qui quam numquam, maiores culpa nesciunt quo.</div>
+  </div>
+</div>
+
 
 
 
