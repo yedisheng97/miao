@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>develop.mozilla.org</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav{
+      background-color: #1e1e1e;
+      height: 60px;
+      padding-left: 250px;
+    }
+
+    .nav ul{
+      list-style: none;
+    }
+
+    .nav ul li{
+      margin: 10px 0;
+      width: 101.16px;
+      height: 44px;
+      border-radius: 4px;
+      float: left;
+      display: block;
+      font-size: 16px;
+      line-height: 50px;
+      text-align: center;
+
+    }
+
+    .nav li a{
+      text-decoration: none;
+      color: #cdcdcd;
+
+    }
+
+    .nav li .down{
+      width: 293.81px;
+      height: 538.24px;
+      border-radius: 5px;
+      border: 2px solid rgba(133, 133, 133);
+      box-shadow: 0 1px 6px rgba(251, 251, 254, .2);
+      background-color: #1e1e1e;
+      position: relative;
+      display: none;
+    }
+
+    .nav .down-bar{
+      color: #fff;
+      width: 294px;
+      height: 74.32px;
+    }
+
+    .nav li .big{
+      font-size: 13.328px;
+      position: absolute;
+      left: 30px;
+      top: 4px;
+    }
+
+    .nav li .small{
+      font-size: 12px;
+      position: absolute;
+      left: 30px;
+      top: 25px;
+    }
+
+    .nav .down-bar::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #ff707fb3;
+      position: absolute;
+      left: 8px;
+      top: 24px;
+      margin-left: 8px;
+    }
+
+    .nav li:hover .down{
+      display: block;
+    }
+
+    .nav .c:hover{
+      background-color: #461b2b;
+      color: #ff6d91;
+      display: block;
+    }
+
+    .nav .down-bar:hover{
+      background-color: #343434;
+
+    }
+
+    .e{
+      background-color: #1e1e1e;
+      font-size: 50px;
+      line-height: 400px;
+      width: 200px;
+      height: 400px;
+      position: absolute;
+      top: -2px;
+      left: 294px;
+      border: 1px solid rgba(133, 133, 133);
+      box-shadow: 0 1px 6px rgba(251, 251, 254, .2);
+      border-radius: 5px;
+      border-left: none;
+      display: none;
+    }
+
+    .nav .down .d:hover .e{
+      display: block;
+    }
+
+
+  </style>
+
+
+
+</head>
+<body>
+
+  <div class="nav">
+    <ul>
+      <li>
+        <a class="c" href="#"><div>References</div>
+          <div class="down">
+
+            <a class="d" href="#">
+
+              <div class="down-bar">
+                <div class="big">HTML</div>
+                <div class="small">Structure of content on the web</div>
+              </div>
+              <div class="e">hello</div>
+            </a>
+          </div>
+        </a>
+      </li>
+
+
+
+
+      <li>
+        <a class="c" href="#"><div>Guides</div></a>
+      </li>
+      <li>
+        <a class="c" href="#"><div>MDN Plus</div></a>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>
