@@ -30,6 +30,7 @@
       font-size: 16px;
       line-height: 60px;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .nav li a{
@@ -104,6 +105,44 @@
       top: 445.92px;
     }
 
+
+    .nav .down-bar8{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+    }
+    .nav .down-bar9{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 128.64px;
+
+    }
+    .nav .down-bar10{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 202.96px;
+
+    }
+    .nav .down-bar11{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 277.28px;
+
+    }
+    .nav .down-bar12{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 351.6px;
+    }
 
 
 
@@ -202,6 +241,71 @@
       margin-left: 8px;
     }
 
+    .nav .down-bar8::before{
+      content: '';
+      width: 3.2px;
+      /* height: 32px; */
+      height: 0;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      transition: height .3s ease-in-out;
+    }
+
+    .nav .down-bar9::before{
+      content: '';
+      width: 3.2px;
+      /* height: 32px; */
+      height: 0;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      transition: height .3s ease-in-out;
+    }
+
+    .nav .down-bar10::before{
+      content: '';
+      width: 3.2px;
+      /* height: 32px; */
+      height: 0;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      transition: height .3s ease-in-out;
+    }
+
+    .nav .down-bar11::before{
+      content: '';
+      width: 3.2px;
+      /* height: 32px; */
+      height: 0;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      transition: height .3s ease-in-out;
+    }
+
+    .nav .down-bar12::before{
+      content: '';
+      width: 3.2px;
+      /* height: 32px; */
+      height: 0;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      transition: height .3s ease-in-out;
+    }
+
 
 
 
@@ -216,45 +320,33 @@
       display: block;
     }
 
-    .nav .down-bar:hover{
+    .nav .down-bar:hover,
+    .nav .down-bar2:hover,
+    .nav .down-bar3:hover,
+    .nav .down-bar4:hover,
+    .nav .down-bar5:hover,
+    .nav .down-bar6:hover,
+    .nav .down-bar7:hover
+    {
       background-color: #343434;
     }
 
-    .nav .down-bar2:hover{
+    .nav .down-bar8:hover,
+    .nav .down-bar9:hover,
+    .nav .down-bar10:hover,
+    .nav .down-bar11:hover,
+    .nav .down-bar12:hover{
       background-color: #343434;
+      height: 74.32px;
+
     }
-
-    .nav .down-bar3:hover{
-      background-color: #343434;
-    }
-
-    .nav .down-bar4:hover{
-      background-color: #343434;
-    }
-
-    .nav .down-bar5:hover{
-      background-color: #343434;
-    }
-
-    .nav .down-bar6:hover{
-      background-color: #343434;
-    }
-
-    .nav .down-bar7:hover{
-      background-color: #343434;
-    }
-
-
-
-
-
 
     .e, .f, .g, .h, .i, .j, .k{
       background-color: #1e1e1e;
-      font-size: 30px;
-      line-height: 200px;
+      font-size: 20px;
+      line-height: 300px;
       width: 200px;
-      height: 400px;
+      height: 300px;
       position: absolute;
       top: -2px;
       left: 294px;
@@ -263,64 +355,109 @@
       border-radius: 5px;
       border-left: none;
       display: none;
+
     }
 
-    .f{
-      top: 74.32px;
-    }
+    .f{top: 74.32px;}
 
-    .g{
-      top: 148.64px;
-    }
+    .g{top: 148.64px;}
 
-    .h{
-      top: 222.96px;
-    }
+    .h{top: 222.96px;}
 
-    .i{
-      top: 297.28px;
-    }
+    .i{top: 297.28px;}
 
-    .j{
-      top: 371.6px;
-    }
+    .j{top: 371.6px;}
 
-    .k{
-      top: 445.92px;
-    }
+    .k{top: 445.92px;}
 
-
-    .nav .down .d:hover .e{
+    .nav .down .d:hover .e,
+    .nav .down .d:hover .f,
+    .nav .down .d:hover .g,
+    .nav .down .d:hover .h,
+    .nav .down .d:hover .i,
+    .nav .down .d:hover .j,
+    .nav .down .d:hover .k
+    {
       display: block;
     }
 
-    .nav .down .d:hover .f{
-      display: block;
+
+    .l, .m, .n, .o, .p{
+      background-color: #1e1e1e;
+      font-size: 20px;
+      line-height: 300px;
+      width: 200px;
+      height: 300px;
+      position: absolute;
+      top: -50;
+      left: 401px;
+      border-radius: 1px;
+      border: 1px solid rgba(133, 133, 133);
+      box-shadow: 0 1px 6px rgba(251, 251, 254, .2);
+      border-top: none;
+      display: none;
     }
-    .nav .down .d:hover .g{
+
+    .m{
+      top: 128.64px;
+    }
+    .n{
+      top: 202.96px;
+    }
+    .o{
+      top: 277.28px;
+    }
+    .p{
+      top: 351.6px;
+    }
+
+
+    .down2{
+      width: 299.97px;
+      /* height: 389.6px; */
+      height: 0;
+      box-shadow: 0 1px 6px rgba(251, 251, 254, .4);
+      background-color: #1e1e1e;
+      transition: height .3s ease-in-out, background-color .6s ease-in-out;
+      /* display: none; */
+    }
+
+    .nav .c:hover .down2{
+      display: block;
+      height: 377.6px;
+      background-color: #209eba;
+    }
+
+    .nav .q{
+      display: none;
+    }
+
+    .nav .c:hover .q{
       display: block;
     }
 
-    .nav .down .d:hover .h{
-      display: block;
-    }
-    .nav .down .d:hover .i{
-      display: block;
-    }
-
-    .nav .down .d:hover .j{
-      display: block;
+    .nav .q:hover .down-bar8::before,
+    .nav .q:hover .down-bar9::before,
+    .nav .q:hover .down-bar10::before,
+    .nav .q:hover .down-bar11::before,
+    .nav .q:hover .down-bar12::before{
+      height: 32px;
     }
 
-    .nav .down .d:hover .k{
+    .nav .q:hover .l,
+    .nav .q:hover .m,
+    .nav .q:hover .n,
+    .nav .q:hover .o,
+    .nav .q:hover .p{
       display: block;
+      color: #fff;
     }
+
+
+
 
 
   </style>
-
-
-
 </head>
 <body>
 
@@ -397,10 +534,48 @@
       </li>
 
 
-
-
       <li>
-        <a class="c" href="#"><div>Guides</div></a>
+        <a class="c" href="#"><div>Guides</div>
+          <div class="down2">
+
+            <div class="q">
+              <div class="down-bar8">
+                <div class="big">MDN Learning Area</div>
+                <div class="small">Learn web development</div>
+              </div>
+              <div class="l">MDN Learning Area</div>
+            </div>
+            <div class="q">
+              <div class="down-bar9">
+                <div class="big">HTML</div>
+                <div class="small">Learn to structure web content with HTML</div>
+              </div>
+              <div class="m">HTML</div>
+            </div>
+            <div class="q">
+              <div class="down-bar10">
+                <div class="big">CSS</div>
+                <div class="small">Learn to style content using CSS</div>
+              </div>
+              <div class="n">CSS</div>
+            </div>
+            <div class="q">
+              <div class="down-bar11">
+                <div class="big">JavaScript</div>
+                <div class="small">Learn to run scripts in the browser</div>
+              </div>
+              <div class="o">JavaScript</div>
+            </div>
+            <div class="q">
+              <div class="down-bar12">
+                <div class="big">Accessibility</div>
+                <div class="small">Learn to make the web accessible to all</div>
+              </div>
+              <div class="p">Accessibility</div>
+            </div>
+
+          </div>
+        </a>
       </li>
       <li>
         <a class="c" href="#"><div>MDN Plus</div></a>
