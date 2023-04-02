@@ -117,33 +117,56 @@
       width: 300px;
       height: 74.32px;
       position: absolute;
-      top: 128.64px;
-
+      top: 138.64px;
     }
     .nav .down-bar10{
       color: #fff;
       width: 300px;
       height: 74.32px;
       position: absolute;
-      top: 202.96px;
-
+      top: 212.96px;
     }
     .nav .down-bar11{
       color: #fff;
       width: 300px;
       height: 74.32px;
       position: absolute;
-      top: 277.28px;
-
+      top: 287.28px;
     }
     .nav .down-bar12{
       color: #fff;
       width: 300px;
       height: 74.32px;
       position: absolute;
-      top: 351.6px;
+      top: 361.6px;
     }
-
+    .nav .down-bar13{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+    }
+    .nav .down-bar14{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 74.32px;
+    }
+    .nav .down-bar15{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 148.64px;
+    }
+    .nav .down-bar16{
+      color: #fff;
+      width: 300px;
+      height: 74.32px;
+      position: absolute;
+      top: 222.96px;
+    }
 
 
 
@@ -241,58 +264,10 @@
       margin-left: 8px;
     }
 
-    .nav .down-bar8::before{
-      content: '';
-      width: 3.2px;
-      /* height: 32px; */
-      height: 0;
-      background-color: #fff;
-      position: absolute;
-      left: 8px;
-      top: 28px;
-      margin-left: 8px;
-      transition: height .3s ease-in-out;
-    }
-
-    .nav .down-bar9::before{
-      content: '';
-      width: 3.2px;
-      /* height: 32px; */
-      height: 0;
-      background-color: #fff;
-      position: absolute;
-      left: 8px;
-      top: 28px;
-      margin-left: 8px;
-      transition: height .3s ease-in-out;
-    }
-
-    .nav .down-bar10::before{
-      content: '';
-      width: 3.2px;
-      /* height: 32px; */
-      height: 0;
-      background-color: #fff;
-      position: absolute;
-      left: 8px;
-      top: 28px;
-      margin-left: 8px;
-      transition: height .3s ease-in-out;
-    }
-
-    .nav .down-bar11::before{
-      content: '';
-      width: 3.2px;
-      /* height: 32px; */
-      height: 0;
-      background-color: #fff;
-      position: absolute;
-      left: 8px;
-      top: 28px;
-      margin-left: 8px;
-      transition: height .3s ease-in-out;
-    }
-
+    .nav .down-bar8::before,
+    .nav .down-bar9::before,
+    .nav .down-bar10::before,
+    .nav .down-bar11::before,
     .nav .down-bar12::before{
       content: '';
       width: 3.2px;
@@ -303,12 +278,35 @@
       left: 8px;
       top: 28px;
       margin-left: 8px;
-      transition: height .3s ease-in-out;
+      transition: height .25s ease-in-out;
     }
 
+    .nav .down-bar13::before,
+    .nav .down-bar14::before,
+    .nav .down-bar15::before,
+    .nav .down-bar16::before{
+      content: '';
+      width: 3.2px;
+      height: 32px;
+      background-color: #fff;
+      position: absolute;
+      left: 8px;
+      top: 28px;
+      margin-left: 8px;
+      opacity: 0;
+      transition: height .22s ease-in-out;
+      animation: slideRight .5s ease-in-out forwards;
+    }
 
-
-
+    .nav .down-bar14::before{
+      animation-delay: .15s;
+    }
+    .nav .down-bar15::before{
+      animation-delay: .3s;
+    }
+    .nav .down-bar16::before{
+      animation-delay: .45s;
+    }
 
     .nav li:hover .down{
       display: block;
@@ -338,11 +336,39 @@
     .nav .down-bar12:hover{
       background-color: #343434;
       height: 74.32px;
+    }
 
+    .nav .down-bar13:hover .big,
+    .nav .down-bar14:hover .big,
+    .nav .down-bar15:hover .big,
+    .nav .down-bar16:hover .big
+    {
+      color: #000000;
+      font-size: 20px;
+    }
+
+    .nav .down-bar13:hover .small,
+    .nav .down-bar14:hover .small,
+    .nav .down-bar15:hover .small,
+    .nav .down-bar16:hover .small{
+      color: #000000;
+      font-size: 16px;
+    }
+
+    .nav .big, .small{
+      transition: font-size .22s ease-in;
+    }
+
+    .nav .w:hover .down-bar13::before,
+    .nav .w:hover .down-bar14::before,
+    .nav .w:hover .down-bar15::before,
+    .nav .w:hover .down-bar16::before{
+      background-color: #000000;
+      height: 36px;
     }
 
     .e, .f, .g, .h, .i, .j, .k{
-      background-color: #1e1e1e;
+      background-color: #343434;
       font-size: 20px;
       line-height: 300px;
       width: 200px;
@@ -351,8 +377,8 @@
       top: -2px;
       left: 294px;
       border: 1px solid rgba(133, 133, 133);
-      box-shadow: 0 1px 6px rgba(251, 251, 254, .2);
-      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(251, 251, 254, .2);
+      border-radius: 2px;
       border-left: none;
       display: none;
 
@@ -383,7 +409,7 @@
 
 
     .l, .m, .n, .o, .p{
-      background-color: #1e1e1e;
+      background-color: #343434;
       font-size: 20px;
       line-height: 300px;
       width: 200px;
@@ -399,16 +425,16 @@
     }
 
     .m{
-      top: 128.64px;
+      top: 138.64px;
     }
     .n{
-      top: 202.96px;
+      top: 212.96px;
     }
     .o{
-      top: 277.28px;
+      top: 287.28px;
     }
     .p{
-      top: 351.6px;
+      top: 361.6px;
     }
 
 
@@ -418,14 +444,14 @@
       height: 0;
       box-shadow: 0 1px 6px rgba(251, 251, 254, .4);
       background-color: #1e1e1e;
-      transition: height .3s ease-in-out, background-color .6s ease-in-out;
+      transition: height .25s ease-in-out, background-color .4s ease-in-out;
       /* display: none; */
     }
 
     .nav .c:hover .down2{
       display: block;
-      height: 377.6px;
-      background-color: #209eba;
+      height: 387.6px;
+      background: repeating-radial-gradient(#209eba, #c0caca);
     }
 
     .nav .q{
@@ -453,9 +479,82 @@
       color: #fff;
     }
 
+    .nav .c .down3{
+      width: 400px;
+      height: 315.28px;
+      position: relative;
+      display: none;
+      background: linear-gradient(-45deg, #dfe879, #d38ca7, #67b2cd, #7dc9b8, #b5cb9a, #d88f8f, #dbe196);
+      background-size: 1000% 1000%;
+      animation: gradient 6s ease-in-out infinite;
+    }
 
 
 
+    .nav .w{
+      position: absolute;
+    }
+
+    .nav .c:hover .down3{
+      display: block;
+    }
+
+    .nav .down-bar13,
+    .nav .down-bar14,
+    .nav .down-bar15,
+    .nav .down-bar16{
+      width: 400px;
+      opacity: 0;
+      animation: slideLeft .6s ease forwards;
+    }
+
+    .nav .down-bar14{
+      animation-delay: .15s;
+    }
+    .nav .down-bar15{
+      animation-delay: .3s;
+    }
+    .nav .down-bar16{
+      animation-delay: .45s;
+    }
+
+
+
+    @keyframes slideLeft{
+      0%{
+        transform: translateX(120px);
+      }
+
+      100%{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRight{
+      0%{
+        transform: translateX(-100px);
+      }
+
+      100%{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes gradient{
+      0%{
+        background-position: 0 50%;
+      }
+
+      50%{
+        background-position: 100% 50%;
+      }
+
+      110%{
+        background-position: 0 50%;
+      }
+    }
 
   </style>
 </head>
@@ -577,11 +676,47 @@
           </div>
         </a>
       </li>
+
       <li>
-        <a class="c" href="#"><div>MDN Plus</div></a>
+        <a class="c" href="#"><div>MDN Plus</div>
+          <div class="down3">
+
+            <div class="w">
+              <div class="down-bar13">
+                <div class="big">Overview</div>
+                <div class="small">A customized MDN experience</div>
+              </div>
+            </div>
+
+            <div class="w">
+              <div class="down-bar14">
+                <div class="big">Updates</div>
+                <div class="small">All browser compatibility updates at a glance</div>
+              </div>
+            </div>
+
+            <div class="w">
+              <div class="down-bar15">
+                <div class="big">Documentation</div>
+                <div class="small">Learn how to use MDN Plus</div>
+              </div>
+            </div>
+
+            <div class="w">
+              <div class="down-bar16">
+                <div class="big">FAQ</div>
+                <div class="small">Frequently asked questions about MDN Plus</div>
+              </div>
+            </div>
+
+
+          </div>
+        </a>
       </li>
     </ul>
   </div>
+
+
 
 </body>
 </html>
