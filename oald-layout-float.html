@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      text-align: center;
+    }
+
+    span{
+      width: 100px;
+      height: 100%;
+      background-color: rgb(26, 214, 151);
+    }
+
+    .a {
+      float: left;
+      overflow-y: scroll;
+      border-right: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .b, .c {
+      float: right;
+    }
+
+    .c {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .box {
+      height: 100%;
+      background-color: rgb(204, 166, 116);
+    }
+
+    .header {
+      height: 100px;
+      background-color: rgb(49, 127, 195);
+    }
+
+    .main {
+      height: calc(100% - 100px);
+      overflow-y: scroll;
+      border-top: 1px solid black;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <span class="a">left</span>
+  <span class="b">right1</span>
+  <span class="c">right2</span>
+  <div class="box">
+    <div class="header">header</div>
+    <div class="main">main</div>
+  </div>
+
+</body>
+</html>
