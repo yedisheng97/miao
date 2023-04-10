@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(118, 179, 193);
+    }
+
+    .box {
+      display: grid;
+      grid-template-rows: repeat(3,60px);
+      grid-template-columns: repeat(3,60px);
+      position: absolute;
+      left: 5%;
+      top: 10%;
+      gap: 0px;
+    }
+
+    .box span {
+      background-color: white;
+      border: 5px solid #676dc5;
+      margin: -2.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box span:hover {
+      z-index: 1;
+      border-color: red;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+  </div>
+
+</body>
+</html>
