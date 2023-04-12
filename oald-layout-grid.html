@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: 100px calc(100% - 300px) 100px 100px;
+      grid-template-rows: 100px calc(100% - 100px);
+      text-align: center;
+    }
+
+    .left {
+      grid-row: 1/-1;
+      grid-column: 1/2;
+      background-color: rgb(208, 199, 186);
+      overflow-y: scroll;
+      box-sizing: border-box;
+      border-right: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .header {
+      grid-row: 1/2;
+      grid-column: 2/3;
+      background-color: rgb(130, 194, 174);
+    }
+
+    .main {
+      background-color: rgb(158, 158, 178);
+      border-top: 1px solid black;
+      overflow-y: scroll;
+      box-sizing: border-box;
+    }
+
+    .right1 {
+      grid-row: 1/-1;
+      grid-column: 3/4;
+      background-color: rgb(70, 157, 157);
+      border-left: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .right2 {
+      grid-row: 1/-1;
+      grid-column: 4/-1;
+      background-color: rgb(163, 230, 230);
+      border-left: 1px solid black;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="left">left</div>
+  <div class="header">header</div>
+  <div class="main">main</div>
+  <div class="right1">right1</div>
+  <div class="right2">right2</div>
+</body>
+</html>
