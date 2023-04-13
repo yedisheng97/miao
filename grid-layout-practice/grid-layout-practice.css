@@ -187,6 +187,9 @@ img {
   grid-template-rows: repeat(7, 50px);
   grid-template-columns: repeat(3, 50px);
   border: 2px solid red;
+
+  background-size: 500% 500%;
+  animation: gradient 4s ease-in-out infinite;
 }
 
 .ins span {
@@ -196,12 +199,15 @@ img {
   align-items: center;
 }
 
-.ins span:nth-child(4) {
-  grid-row: 2/4;
-  grid-column: 1/3;
+.ins span:nth-child(12n + 4) {
+  grid-row: span 2;
+  grid-column: span 2;
 }
 
-.ins span:nth-child(12) {
-  grid-row: 5/7;
-  grid-column: 2/-1;
+.ins span:nth-child(12n + 11) {
+  grid-row: span 2;
+  grid-column: span 2;
 }
+
+
+
