@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* smile */
+    .circle {
+      width: 200px;
+      height: 200px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      margin: 50px;
+    }
+
+    .smile {
+      transform-origin: 100px 100px;
+      animation: rotate 2s linear infinite;
+    }
+
+    .smile i{
+      font-size: 70px;
+      color: rgb(0, 149, 255);
+      animation: no-rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes no-rotate {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    /* 居中 */
+    .outer1,.outer2, .outer3, .outer4, .outer5, .outer6, .outer7 {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(255, 0, 0);
+    }
+
+    /* 1 */
+    .outer1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 2 */
+    .outer2 {
+      position: relative;
+    }
+
+    .box2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 3 */
+    .outer3 {
+      position: relative;
+    }
+
+    .box3 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 4 */
+    .outer4 {
+      width: 65px;
+      height: 65px;
+      padding-top: 35px;
+      padding-left: 35px;
+    }
+
+    /* 5 */
+    .outer5 {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 6 */
+    .outer6 {
+      text-align: center;
+      line-height: 100px;
+      font-size: 0;
+    }
+
+    .box6 {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* 7 */
+    .outer7 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .box7 {
+      margin: 0 auto;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="circle">
+    <div class="smile">
+      <i class='bx bx-smile'></i>
+    </div>
+  </div>
+
+  <div class="outer1">
+    <div class="box1"></div>
+  </div>
+
+  <div class="outer2">
+    <div class="box2"></div>
+  </div>
+
+  <div class="outer3">
+    <div class="box3"></div>
+  </div>
+
+  <div class="outer4">
+    <div class="box4"></div>
+  </div>
+
+  <div class="outer5">
+    <div class="box5"></div>
+  </div>
+
+  <div class="outer6">
+    <div class="box6"></div>
+  </div>
+
+  <div class="outer7">
+    <div class="box7"></div>
+  </div>
+
+</body>
+</html>
