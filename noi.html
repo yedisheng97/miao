@@ -22,7 +22,7 @@
   var a = +prompt('a')
   var b = +prompt('b')
   var c = +prompt('c')
-  var d = (a + b) / c
+  var d = Math.trunc((a + b) / c)
   console.log(d);
 
 </script>
@@ -31,7 +31,7 @@
 
   var a = +prompt('a')
   var b = +prompt('b')
-  var c = a / b
+  var c = Math.trunc(a / b)
   var d = a % b
   console.log(c);
   console.log(d);
@@ -78,8 +78,8 @@
   var r = +prompt('r')
 
   var l = r * 2
-  var q = 2 * Math.PI * r
-  var m = Math.PI * r**2
+  var q = 2 * 3.14159 * r
+  var m = 3.14159 * r**2
 
   console.log(l.toFixed(4));
   console.log(q.toFixed(4));
@@ -101,7 +101,7 @@
 
   var a = +prompt('a')
   var b = +prompt('b')
-  var r = (a / b) - Math.floor(a / b)
+  var r = a % b
   console.log(r.toFixed(4));
 
 </script>
@@ -118,7 +118,7 @@
   var a = parseInt(n / 100)
   var b = parseInt(n % 100 / 10)
   var c = n % 10
-  console.log(c, b, a);
+  console.log('' + c + b + a);
 
 </script>
 <script id="ch0103/14" type="">
@@ -288,7 +288,7 @@
   var x = +prompt('x')
   var a = x / 1.2
   var b = x / 3 + 50
-  console.log(a > b ? 'BIKE' : (a < b ? 'WALK' : All));
+  console.log(a > b ? 'Bike' : (a < b ? 'Walk' : All));
 
 </script>
 <script id="ch0104/13" type="">
@@ -374,25 +374,29 @@
   var x
   if(n === '+') {
     x = a + b
+    console.log(x);
+
   }
   else if(n === '-') {
     x = a - b
+    console.log(x);
+
   }
   else if(n === '*') {
     x = a * b
+    console.log(x);
+
   }
+  else if(b === 0 && n === '/'){
+      console.log('Divided by zero!');
+    }
   else if(n === '/') {
     x = a / b
+    console.log(x);
   }
   else {
     console.log('Invalid operator!');
   }
-
-  if(b === 0 && n === '/'){
-      console.log('Divided by zero!');
-    }
-
-  console.log(x);
 
 </script>
 <script id="ch0104/20" type="">
@@ -406,13 +410,13 @@
   var x1 = (- b + Math.sqrt(b * b - 4 * a * c)) / (2 * a).toFixed(5)
   var x2 = (- b - Math.sqrt(b * b - 4 * a * c)) / (2 * a).toFixed(5)
   if(b ** 2 === 4 * a * c){
-    console.log('x1 = x2 = ' + x1.toFixed(5) );
+    console.log('x1=x2=' + x1.toFixed(5) );
   }
   else if(b ** 2 > 4 * a * c){
-    console.log('x1 = ' + x1.toFixed(5) + ' ; x2 = ' + x2.toFixed(5));
+    console.log('x1=' + x1.toFixed(5) + ';x2=' + x2.toFixed(5));
   }
   else{
-    console.log('x1 = ' + r.toFixed(5) + '+' + v.toFixed(5) +'i' + ' ; x2 = ' + r.toFixed(5) + '-' + v.toFixed(5) +'i');
+    console.log('x1=' + r.toFixed(5) + '+' + v.toFixed(5) +'i' + ';x2=' + r.toFixed(5) + '-' + v.toFixed(5) +'i');
   }
 
 </script>
@@ -827,7 +831,7 @@
     n = Math.trunc(n / 10)
   }
 
-  console.log(s);
+  console.log(String(s));
 
 </script>
 <script id="ch0105/29" type="">
@@ -844,7 +848,7 @@
     n = Math.trunc(n / 10)
   }
 
-  console.log(s);
+  console.log(String(s));
 
 
 </script>
@@ -873,7 +877,7 @@
 
   var N = +prompt('N')
   var M = +prompt('M')
-  console.log(1);
+  let str = '1'
   for(i = 2; i <= N; i ++) {
     var flag = true
     for(j = 1; j <= M; j ++) {
@@ -883,9 +887,10 @@
     }
 
     if(flag === false) {
-        console.log(i);
+        str = str + ',' + i
       }
   }
+  console.log(str);
 
 
 </script>
