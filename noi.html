@@ -825,31 +825,36 @@
 <script id="ch0105/28" type="">
 
   var n = +prompt('n')
-  var s = 0
+  var str = ''
   while (n > 0) {
-    s = s * 10 + n % 10
+    str += + n % 10 + ' '
     n = Math.trunc(n / 10)
   }
 
-  console.log(s);
+  console.log(str);
 
 </script>
 <script id="ch0105/29" type="">
 
   var n = +prompt('n')
   var s = 0
-  if(n < 0) {
-    n = -n
-  }
 
-  while (n > 0) {
-    s = s * 10 + n % 10
-    n = Math.trunc(n / 10)
+  if(n > 0) {
+    while (n > 0) {
+      s = s * 10 + n % 10
+      n = Math.trunc(n / 10)
+    }
     console.log(s);
   }
 
-  console.log(-s);
-
+  if(n < 0) {
+    n = -n
+    while (n > 0) {
+      s = s * 10 + n % 10
+      n = Math.trunc(n / 10)
+    }
+    console.log(-s);
+  }
 
 </script>
 <script id="ch0105/30" type="">
