@@ -1067,22 +1067,22 @@
   for(i = 1; i <= x; i ++) {
     if(n === 1) {
       for(j = 1; j <= y; j ++) {
-          document.write(z)
+          console.log(z);
         }
       }
-    document.write("<br>")
+
+    console.log('\n');
 
     if(n === 0) {
       for(j = 1; j <= y; j ++){
         if(i !== 1 && i !== x && j !== 1 && j !== y) {
-          document.write("<span style='white-space:pre;'>  "+"  </span>")
+          console.log(" ");
         }
         else {
-          document.write(z)
+          console.log(z);
         }
       }
     }
-    document.write("<br>")
   }
 
 </script>
