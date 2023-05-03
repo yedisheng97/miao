@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="400"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.trunc(x)
+    y = Math.trunc(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * 你的任务：通过调用dot函数，实现：
+   * 需要注意，dot函数不能接收浮点数，如果参数为浮点数，会被转换为整数后绘制
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条水平实线，粗细为一个像素
+      * 画一条垂直实线，粗细为一个像素
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个空心的圆，圆心在画布中心：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小位置都合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+      * 如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变换后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+
+  dot(42, 42, 'black')
+
+  //水平实线
+  for(i = 0; i < 20; i ++) {
+    dot(10 + i, 40, 'black')
+  }
+
+  //垂直实线
+  for(i = 0; i < 20; i ++) {
+    dot(20, 60 + i, 'black')
+  }
+
+  //1,1虚线
+  for(i = 0; i < 20; i += 2) {
+    dot(10 + i, 120, 'black')
+  }
+
+  //2,2虚线
+  let count = 2
+  for(i = 0; i < 20; i ++) {
+    if(count > 0 && count <= 2) {
+      dot(10 + i, 140, 'black')
+      count --
+    }
+    if (count === 0) {
+      count += 5
+    }
+    if(count > 2) {
+      count--
+    }
+  }
+
+  //3,2虚线
+  let count1 = 3
+  for(i = 0; i < 24; i ++) {
+    if(count1 > 0 && count1 <= 3) {
+      dot(10 + i, 160, 'black')
+      count1 --
+    }
+    if (count1 === 0) {
+      count1 += 6
+    }
+    if(count1 > 3) {
+      count1--
+    }
+  }
+
+  //45度斜线
+  for(i = 0; i < 20; i ++) {
+    dot(10 + i, 220 - i, 'black')
+  }
+
+  //30度斜线
+  for(i = 0; i < 20; i ++) {
+    dot(10 + i, 240 - i / 2, 'black')
+  }
+
+  //对角线
+  for(i = 0; i < 500; i ++) {
+    dot(0 + i, 0 + 0.8 * i, 'black')
+  }
+
+  //实心矩形
+  for(i = 0; i < 20; i ++) {
+    for(j = 0; j < 30; j ++) {
+      dot(10 + i, 300 + j, 'black')
+    }
+  }
+
+  //空心矩形
+  for(i = 0; i < 20; i ++) {
+    for(j = 0; j < 30; j ++) {
+      if(i !== 0 && i !== 19 && j !==0 && j !== 29){
+        dot(10 + i, 340, 'black')
+        dot(10 + i, 369, 'black')
+      }else {
+        dot(10 + i, 340 + j, 'black')
+      }
+    }
+  }
+
+  //小圆
+  let angle
+  let r = 1
+  let x = 250
+  let y = 150
+  for(angle = 0; angle < 360; angle ++) {
+    x += r * Math.cos(angle * Math.PI / 180)
+    y += r * Math.sin(angle * Math.PI / 180)
+    dot(x, y, 'black')
+  }
+
+  //大圆
+  let angle2
+  let r2 = 3.5
+  let x2 = 250
+  let y2 = 0
+  for(angle2 = 0; angle2 < 360; angle2 ++) {
+    x2 += r2 * Math.cos(angle2 * Math.PI / 180)
+    y2 += r2 * Math.sin(angle2 * Math.PI / 180)
+    dot(x2, y2, 'black')
+  }
+
+  //实心圆
+  let R = 100
+  for (x = -R; x <= R; x++) {
+    let Y = Math.sqrt(R ** 2 - x ** 2)
+    for (y = -Y; y <= Y; y++) {
+      dot(x + 400, y + 100, 'black')
+    }
+  }
+  //sin
+  let a = 0
+  let b
+  while (a <= Math.PI * 2) {
+    b = Math.sin(a)
+    a += Math.PI / 32
+    dot(80 + a * 20, 300 - b * 40, 'black')
+  }
+
+  //rgb面
+  for(x = 0; x < 256; x++) {
+    for(y = 0; y < 256; y++) {
+      dot(x, y,'rgb(' + x + ', 255, ' + y + ')')
+    }
+  }
+
+  //放大
+  for(x = 0; x < 256; x++) {
+    for(y = 0; y < 256; y++) {
+      let x1 = 2 * x
+      let y1 = 2 * y
+      dot(x1 + 100,y1 + 100,'rgb(' + x1 + ',' + y1 +', 255)')
+      dot(x1 + 101,y1 + 100,'rgb(' + x1 + ',' + y1 +', 255)')
+      dot(x1 + 100,y1 + 101,'rgb(' + x1 + ',' + y1 +', 255)')
+      dot(x1 + 101,y1 + 101,'rgb(' + x1 + ',' + y1 +', 255)')
+    }
+  }
+
+  //倾斜
+  for(x = 0; x < 256; x++) {
+    for(y = 0; y < 256; y++) {
+      let x1 = x
+      let y1 = 0.27 * x + y
+      dot(x1 + 40,y1 + 40,'rgb(255, ' + x1 + ',' + y1 + ')')
+    }
+  }
+
+  //旋转
+  for(x = 255; x >= 0; x--) {
+    for(y = 255; y >= 0; y--) {
+      let x1 = 0.5 * x - 0.87 * y
+      let y1 = 0.87 * x + 0.5 * y
+      dot(x1 + 40,y1 + 40,'rgb(255, ' + x1 + ',' + y1 + ')')
+      dot(x1 + 41,y1 + 40,'rgb(255, ' + x1 + ',' + y1 + ')')
+      dot(x1 + 40,y1 + 41,'rgb(255, ' + x1 + ',' + y1 + ')')
+      dot(x1 + 41,y1 + 41,'rgb(255, ' + x1 + ',' + y1 + ')')
+    }
+  }
+
+</script>
+</html>
