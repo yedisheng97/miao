@@ -60,7 +60,7 @@ class Complex {
     return new Complex(real, imag)
   }
 
-  mul() {
+  mul(c) {
     let real = this.real * c.real + this.imag * c.imag * (-1)
     let imag = this.real * c.imag + this.imag * c.real
     return new Complex(real, imag)
@@ -75,7 +75,7 @@ class Complex {
     return new Complex(real, imag)
   }
 
-  div() {
+  div(c) {
     let helper = new Complex(c.real, -c.imag)
     let up = this.mul(helper)
     let down = c.mul(helper)
@@ -173,11 +173,11 @@ class Queue {
     this.count++
   }
 
-  pop(val) {
+  pop() {
     if (!this.head) {
       return
     }
-
+    this.count--
     if (this.head.next === this.tail) {
       let p = this.head.val
       this.head = this.tail = null
@@ -217,10 +217,10 @@ class Stack {
     this.count++
   }
 
-  pop(val) {
+  pop() {
     if (!this.head) return undefined
 
-    this.count++
+    this.count--
     let p = this.head.val
     this.head = this.head.next
     return p
@@ -368,11 +368,8 @@ class MyMap {
 // MySet
 class MySet {
 
-  constructor(initVals) {
+  constructor() {
     this.MyMap = new MyMap()
-    for (var val of initVals) {
-      this.MyMap.add(val)
-    }
   }
 
   set(key, val) {
