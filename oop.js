@@ -1,7 +1,7 @@
 // Vector
 class Vector {
 
-  constructor() {
+  constructor(x, y) {
     this.x = x
     this.y = y
   }
@@ -25,7 +25,7 @@ class Vector {
 
 // Complex
 class Complex {
-  constructor() {
+  constructor(real, imag) {
     this.real = real
     this.imag = imag
   }
@@ -36,9 +36,21 @@ class Complex {
     return new Complex(real, imag)
   }
 
+  plus(c) {
+    let real = this.real + c.real
+    let imag = this.imag + c.imag
+    return new Complex(real, imag)
+  }
+
   static minus(a, b) {
     let real = a.real - b.real
     let imag = a.imag - b.imag
+    return new Complex(real, imag)
+  }
+
+  minus(c) {
+    let real = this.real - c.real
+    let imag = this.imag - c.imag
     return new Complex(real, imag)
   }
 
@@ -48,10 +60,25 @@ class Complex {
     return new Complex(real, imag)
   }
 
+  mul() {
+    let real = this.real * c.real + this.imag * c.imag * (-1)
+    let imag = this.real * c.imag + this.imag * c.real
+    return new Complex(real, imag)
+  }
+
   static div(a, b) {
     let helper = new Complex(b.real, -b.imag)
     let up = a.mul(helper)
     let down = b.mul(helper)
+    let real = up.real / down.real
+    let imag = up.imag / down.real
+    return new Complex(real, imag)
+  }
+
+  div() {
+    let helper = new Complex(c.real, -c.imag)
+    let up = this.mul(helper)
+    let down = c.mul(helper)
     let real = up.real / down.real
     let imag = up.imag / down.real
     return new Complex(real, imag)
@@ -176,7 +203,7 @@ class Stack {
     this.count = 0
   }
 
-  add(val) {
+  push(val) {
     let node = {
       val: val,
       next: null
@@ -214,11 +241,12 @@ class MyMap {
     this._size = 0
     this._maxLoadFactor = 0.75
   }
+
   hashkey(key) {
     const seed = 131
     let hash = 0
-    for (const char of key) {
-      let code = char.charCodeAt()
+    for (let char of key) {
+      let code = char.charCodeAt(0)
       hash = (hash * seed + code) >>> 0
     }
     return hash % this._capacity
@@ -340,8 +368,11 @@ class MyMap {
 // MySet
 class MySet {
 
-  constructor() {
-    this.MyMap() = new MyMap()
+  constructor(initVals) {
+    this.MyMap = new MyMap()
+    for (var val of initVals) {
+      this.MyMap.add(val)
+    }
   }
 
   set(key, val) {
