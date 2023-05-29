@@ -300,7 +300,7 @@ class MyMap {
     return false
   }
 
-  delete(val) {
+  delete(key) {
     const index = hashkey(key)
     let dummy = {
       key: '',
