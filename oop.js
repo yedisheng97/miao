@@ -88,12 +88,9 @@ class Complex {
 // LinkedList
 class LinkedList {
 
-  constructor(...initVals) {
+  constructor() {
     this.head = null
     this.tail = null
-    for (let item of initVals) {
-      this.head.append(item)
-    }
   }
 
   append(val) {
@@ -101,7 +98,7 @@ class LinkedList {
       val: val,
       next: null
     }
-    if (this.head === null) {
+    if (this.head == null) {
       this.head = this.tail = node
       return
     }
@@ -139,7 +136,7 @@ class LinkedList {
     return p.val
   }
 
-  get length() {
+  get size() {
     let l = 0
     let p = this.head
     while (p) {
@@ -253,7 +250,7 @@ class MyMap {
   }
 
   set(key, val) {
-    const index = hashkey(key)
+    const index = this.hashkey(key)
     let list = this._lists[index]
     let p = list
     while (p) {
@@ -278,7 +275,7 @@ class MyMap {
   }
 
   get(key) {
-    const index = hashkey(key)
+    const index = this.hashkey(key)
     let p = this._lists[index]
     while (p) {
       if (p.key === key) {
@@ -289,7 +286,7 @@ class MyMap {
   }
 
   has(key) {
-    const index = hashkey(key)
+    const index = this.hashkey(key)
     let p = this._lists[index]
     while (p) {
       if (p.key === key) {
@@ -301,7 +298,7 @@ class MyMap {
   }
 
   delete(key) {
-    const index = hashkey(key)
+    const index = this.hashkey(key)
     let dummy = {
       key: '',
       cal: 0,
@@ -372,7 +369,7 @@ class MySet {
     this.MyMap = new MyMap()
   }
 
-  set(key, val) {
+  add(key, val) {
     return this.MyMap.set(key, val)
   }
 
