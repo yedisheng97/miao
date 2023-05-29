@@ -205,8 +205,8 @@ class Stack {
 }
 
 
-// hashMap
-class hashMap {
+// MyMap
+class MyMap {
 
   constructor() {
     this._capacity = 16
@@ -217,7 +217,7 @@ class hashMap {
   hashkey(key) {
     const seed = 131
     let hash = 0
-    for (let char of key) {
+    for (const char of key) {
       let code = char.charCodeAt()
       hash = (hash * seed + code) >>> 0
     }
@@ -337,30 +337,30 @@ class hashMap {
 }
 
 
-// hashSet
-class hashSet {
+// MySet
+class MySet {
 
   constructor() {
-    this.hashMap() = new hashMap()
+    this.MyMap() = new MyMap()
   }
 
   set(key, val) {
-    return this.hashMap.set(key, val)
+    return this.MyMap.set(key, val)
   }
 
   get(key) {
-    return this.hashMap.get(key)
+    return this.MyMap.get(key)
   }
 
   has(key) {
-    return this.hashMap.has(key)
+    return this.MyMap.has(key)
   }
 
   delete(val) {
-    return this.hashMap.delete(val)
+    return this.MyMap.delete(val)
   }
 
   get size() {
-    return this.hashMap.size()
+    return this.MyMap.size()
   }
 }
