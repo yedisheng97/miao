@@ -386,6 +386,6 @@ class MySet {
   }
 
   get size() {
-    return this.MyMap.size()
+    return this.MyMap.size
   }
 }
