@@ -389,3 +389,72 @@ class MySet {
     return this.MyMap.size
   }
 }
+
+
+// PriorityQueue
+class PriorityQueue {
+  constructor() {
+    this._elements = []
+  }
+  _heapify(arr) {
+    let start = (arr.length - 1) >> 1
+    for (let i = start; i >= 0; i--) {
+      heapDown(arr, i)
+    }
+    return arr
+  }
+  _swap(i, j) {
+    let temp = this._elements[i]
+    this._elements[i] = this._elements[j]
+    this._elements[j] = temp
+  }
+  _heapUp(pos) {
+    if (pos === 0) {
+      return
+    }
+    let parentPos = (pos - 1) >> 1
+    if (this._elements[pos] > this._elements[parentPos]) {
+      this._swap(pos, parentPos)
+      this._heapUp(parentPos)
+    }
+  }
+  _heapDown(pos) {
+    let leftPos = pos * 2 + 1
+    let rightPos = pos * 2 + 2
+    let maxIdx = pos
+    if (leftPos < this._elements.length && this._elements[leftPos] > this._elements[pos]) {
+      maxIdx = leftPos
+    }
+    if (rightPos < this._elements.length && this._elements[rightPos] > this._elements[pos]) {
+      maxIdx = rightPos
+    }
+    if (maxIdx !== pos) {
+      this._swap(maxIdx, pos)
+      this.heapDown(maxIdx)
+    }
+  }
+  push(val) {
+    this._elements.push(val)
+    this._heapUp(this._elements.length - 1)
+    return this
+  }
+  pop() {
+    if (this._elements.length === 0) {
+      return undefined
+    }
+    if (this._elements.length === 1) {
+      return this._elements.pop()
+    }
+    let result = this._elements[0]
+    let last = this._elements.pop()
+    this._elements[0] = last
+    this._heapDown(0)
+    return result
+  }
+  peek() {
+    return this._elements[0]
+  }
+  get size() {
+    return this._elements.length
+  }
+}
