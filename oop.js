@@ -396,13 +396,6 @@ class PriorityQueue {
   constructor() {
     this._elements = []
   }
-  _heapify(arr) {
-    let start = (arr.length - 1) >> 1
-    for (let i = start; i >= 0; i--) {
-      heapDown(arr, i)
-    }
-    return arr
-  }
   _swap(i, j) {
     let temp = this._elements[i]
     this._elements[i] = this._elements[j]
