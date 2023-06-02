@@ -393,32 +393,42 @@ class MySet {
 
 // PriorityQueue
 class PriorityQueue {
-  constructor() {
+  constructor(initials = [], predicate = it => it) {
+    if (typeof predicate !== 'function') {
+      throw new TypeError('predicate must be a function, got: ' + predicate)
+    }
     this._elements = []
+    this._predicate = predicate
+
+    for (var item of initials) {
+      this.push(item)
+    }
   }
   _swap(i, j) {
-    let temp = this._elements[i]
+    var t = this._elements[i]
     this._elements[i] = this._elements[j]
-    this._elements[j] = temp
+    this._elements[j] = t
   }
   _heapUp(pos) {
-    if (pos === 0) {
+    if (pos == 0) {
       return
     }
-    let parentPos = (pos - 1) >> 1
-    if (this._elements[pos] > this._elements[parentPos]) {
+    var predicate = this._predicate
+    var parentPos = (pos - 1) >> 1 // 计算pos位置的元素的父结点的位置
+    if (predicate(this._elements[pos]) > predicate(this._elements[parentPos])) {
       this._swap(pos, parentPos)
       this._heapUp(parentPos)
     }
   }
   _heapDown(pos) {
-    let leftPos = pos * 2 + 1
-    let rightPos = pos * 2 + 2
-    let maxIdx = pos
-    if (leftPos < this._elements.length && this._elements[leftPos] > this._elements[pos]) {
+    var leftPos = 2 * pos + 1
+    var rightPos = 2 * pos + 2
+    var maxIdx = pos
+    var predicate = this._predicate
+    if (leftPos < this._elements.length && predicate(this._elements[leftPos]) > predicate(this._elements[maxIdx])) {
       maxIdx = leftPos
     }
-    if (rightPos < this._elements.length && this._elements[rightPos] > this._elements[pos]) {
+    if (rightPos < this._elements.length && predicate(this._elements[rightPos]) > predicate(this._elements[maxIdx])) {
       maxIdx = rightPos
     }
     if (maxIdx !== pos) {
@@ -432,18 +442,19 @@ class PriorityQueue {
     return this
   }
   pop() {
-    if (this._elements.length === 0) {
+    if (this._elements.length == 0) {
       return undefined
     }
-    if (this._elements.length === 1) {
+    if (this._elements.length == 1) {
       return this._elements.pop()
     }
-    let result = this._elements[0]
-    let last = this._elements.pop()
+    var result = this._elements[0]
+    var last = this._elements.pop()
     this._elements[0] = last
     this._heapDown(0)
     return result
   }
+  // 查看堆顶元素但不将它从堆中删除
   peek() {
     return this._elements[0]
   }
