@@ -430,7 +430,7 @@ class PriorityQueue {
     }
     if (maxIdx !== pos) {
       this._swap(maxIdx, pos)
-      this.heapDown(maxIdx)
+      this._heapDown(maxIdx)
     }
   }
   push(val) {
