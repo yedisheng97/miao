@@ -29,7 +29,7 @@ var yedisheng97 = {
     const value = values.flat()
     const iteratee = value[value.length - 1]
     if (Array.isArray(value)) {
-      return array.difference(array, ...values)
+      return array.filter(it => values.flat().indexOf(it) < 0)
     }
     if (typeof iteratee === "string") {
       return array.filter(it => !new Set(value.map(item => item[iteratee])).has(it[iteratee]))
@@ -38,6 +38,8 @@ var yedisheng97 = {
       return array.filter(it => !new Set(value.map(iteratee)).has(iteratee(it)))
     }
   },
+
+
 
   drop: function (array, len = 1) {
     return array.slice(len)
