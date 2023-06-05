@@ -28,18 +28,17 @@ var yedisheng97 = {
   differenceBy: function (array, ...values) {
     const value = values.flat()
     const iteratee = value[value.length - 1]
-    if (Array.isArray(value)) {
-      return array.filter(it => values.flat().indexOf(it) < 0)
-    }
     if (typeof iteratee === "string") {
       return array.filter(it => !new Set(value.map(item => item[iteratee])).has(it[iteratee]))
     }
     if (typeof iteratee === "function") {
       return array.filter(it => !new Set(value.map(iteratee)).has(iteratee(it)))
     }
+    if (Array.isArray(value)) {
+      return array.filter(it => values.flat().indexOf(it) < 0)
+    }
+    
   },
-
-
 
   drop: function (array, len = 1) {
     return array.slice(len)
