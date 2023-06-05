@@ -28,7 +28,7 @@ var yedisheng97 = {
   differenceBy: function (array, ...values) {
     const value = values.flat()
     const iteratee = value[value.length - 1]
-    if (Array.isArray(iteratee)) {
+    if (Array.isArray(value)) {
       return array.difference(array, ...values)
     }
     if (typeof iteratee === "string") {
@@ -47,8 +47,8 @@ var yedisheng97 = {
     return n > array.length ? [] : array.slice(0, array.length - n)
   },
 
-  fill: function (array, start = 0, end = array.length) {
+  fill: function (array, value, start = 0, end = array.length) {
     return array.fill(value, start, end)
   },
-
 }
+
