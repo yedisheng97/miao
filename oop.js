@@ -462,3 +462,138 @@ class PriorityQueue {
     return this._elements.length
   }
 }
+
+RegExp.prototype.mytest = function (str) {
+  if (this.exec(str)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+String.prototype.mysearch = function (target) {
+  if (typeof target == 'string') {
+    return this.indexOf(target)
+  } else {
+    const match = target.exec(this)
+    if (match) {
+      return match.index
+    } else {
+      return -1
+    }
+  }
+}
+
+String.prototype.mymatch = function (re) {
+  if (re.global) {
+    re.lastIndex = 0
+    let result = []
+    let match
+    while (match = re.exec(this)) {
+      result.push(match[0])
+    }
+    return result
+  } else {
+    return re.exec(this)
+  }
+}
+
+String.prototype.mymatchAll = function (re) {
+  if (re instanceof RegExp) {
+    if (!re.global) {
+      throw new TypeError('String.prototype.matchAll called with a non-global RegExp argument at xxx')
+    }
+  }
+  if (typeof re == 'string') {
+    re = new RegExp(re, 'g')
+  }
+  let result = []
+  let match
+  while (match = re.exec(this)) {
+    result.push(match)
+  }
+  return match
+}
+
+String.prototype.myreplace = function (re, replacer) {
+  re.lastIndex = 0
+  let lastLastIndex = 0
+  let result = ''
+  let match
+  while (match = re.exec(this)) {
+    result += this.slice(lastLastIndex, match.index)
+
+    if (typeof replacer == 'function') {
+      result += replacer(...match, match.index, match.input)
+    } else {
+      let replacement = replacer.myreplace(/\$[1-9\&]/g, (_, idx) => {
+        if (idx == '&') {
+          return match[0]
+        } else {
+          return match[idx]
+        }
+      })
+      result += replacement
+    }
+    lastLastIndex = re.lastIndex
+    if (!re.global) {
+      lastLastIndex = match.index + match[0].length
+      break
+    }
+  }
+  result += this.slice(lastLastIndex)
+  return result
+}
+
+String.prototype.myreplaceAll = function (re, replacer) {
+  if (!re.global) {
+    throw new TypeError('String.prototype.replaceAll called with a non-global RegExp argument at xxx')
+  }
+  return this.myreplace(re, replacer)
+}
+
+String.prototype.mysplit = function (re) {
+  if (typeof re == 'string') {
+    if (re) {
+      re = new RegExp(re, 'g')
+      let result = []
+      re.lastIndex = 0
+      let lastLastIndex = 0
+      let match
+      while (match = re.exec(this)) {
+        result.push(this.slice(lastLastIndex, match.index))
+        result.push(...match.slice(1))
+        lastLastIndex = re.lastIndex
+      }
+      result.push(this.slice(lastLastIndex))
+      return result
+    } else {
+      let result = []
+      for (let i = 0; i < this.length; i++) {
+        result.push(this[i])
+      }
+      return result
+    }
+
+  } else {
+    let result = []
+    if (!re.global) {
+      re = new RegExp(re.source, 'g' + re.flags)
+    }
+    re.lastIndex = 0
+    let lastLastIndex = 0
+    let match
+    while (match = re.exec(this)) {
+      result.push(this.slice(lastLastIndex, match.index))
+      result.push(...match.slice(1))
+      lastLastIndex = re.lastIndex
+    }
+    result.push(this.slice(lastLastIndex))
+    return result
+  }
+}
+
+
+
+
+
