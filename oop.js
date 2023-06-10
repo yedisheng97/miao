@@ -516,6 +516,9 @@ String.prototype.mymatchAll = function (re) {
 }
 
 String.prototype.myreplace = function (re, replacer) {
+  if (typeof re === 'string') {
+    re = new RegExp(re)
+  }
   re.lastIndex = 0
   let lastLastIndex = 0
   let result = ''
@@ -592,6 +595,10 @@ String.prototype.mysplit = function (re) {
     return result
   }
 }
+
+
+
+
 
 
 
