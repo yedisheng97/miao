@@ -515,28 +515,25 @@ String.prototype.mymatchAll = function (re) {
   return match
 }
 
-String.prototype.myreplace = function (re, replacer111) {
-  if (typeof re === 'string') {
-    re = new RegExp(re)
-  }
+String.prototype.myreplace = function (re, replacer) {
   re.lastIndex = 0
   let result = ''
   let match
   let lastLastIndex = 0
-  while (match = re.exec(this)) {
+  while ((match = re.exec(this))) {
     result += this.slice(lastLastIndex, match.index)
 
-    if (typeof replacer111 == 'function') {
-      result += replacer111(...match, match.index, match.input)
+    if (typeof replacer == 'function') {
+      result += replacer(...match, match.index, match.input)
     } else {
-      let replacement = replacer111.myreplace(/\$[1-9\&]/g, (_, idx) => {
+      let replacement = replacer.myreplace(/\$[1-9\&]/g, (_, idx) => {
         if (idx == '&') {
           return match[0]
         } else {
           return match[idx]
         }
       })
-      result += replacement111
+      result += replacement
     }
     lastLastIndex = re.lastIndex
     if (!re.global) {
@@ -581,6 +578,35 @@ String.prototype.myreplace = function (re, replacer111) {
 
 //   return result
 // }
+
+// String.prototype.myreplace = function (regexp, replacer) {
+//   regexp.lastIndex = 0;
+//   var result = "";
+//   var match;
+//   var lastLastIndex = 0;
+//   while ((match = regexp.exec(this))) {
+//     result += this.slice(lastLastIndex, match.index);
+//     if (typeof replacer == "function") {
+//       result += replacer(...match, match.index, match.input);
+//     } else {
+//       var replacement = replacer.myreplace(/\$([1-9\&])/g, (_, idx) => {
+//         if (idx == "&") {
+//           return match[0];
+//         } else {
+//           return match[idx];
+//         }
+//       });
+//       result += replacement;
+//     }
+//     lastLastIndex = regexp.lastIndex;
+//     if (!regexp.global) {
+//       lastLastIndex = match.index + match[0].length;
+//       break;
+//     }
+//   }
+//   result += this.slice(lastLastIndex);
+//   return result;
+// };
 
 String.prototype.myreplaceAll = function (re, replacer) {
   if (!re.global) {
