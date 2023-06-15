@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./fonts/remixicon.css">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    #sun{
+      width: 50px;
+    }
+
+    #earth{
+      width: 30px;
+    }
+
+    #moon{
+      width: 15px;
+    }
+
+    #sun,
+    #earth,
+    #moon {
+      position: fixed;
+      aspect-ratio: 1 / 1;
+      transform: translate(-50%, -50%);
+    }
+
+    .ri-earth-line {
+      font-size: 30px;
+    }
+
+    .ri-sun-fill {
+      font-size: 50px;
+    }
+
+    .ri-moon-line {
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span id="sun">
+      <i class="ri-sun-fill"></i>
+    </span>
+    <span id="earth">
+      <i class="ri-earth-line"></i>
+    </span>
+    <span id="moon">
+      <i class="ri-moon-line"></i>
+    </span>
+  </div>
+
+
+  <script>
+    const earth = document.querySelector("#earth");
+    const moon = document.querySelector('#moon')
+
+    requestAnimationFrame(function animate(time) {
+
+let sunAngle = time / 2000
+let sunX = 150 + 'px'
+let sunY = 150 + 'px'
+sun.style.left = sunX
+sun.style.top = sunY
+
+
+let earthAngle = time / 500
+let earthX = parseFloat(sunX) + Math.cos(earthAngle) * 80  + 'px'
+let earthY = parseFloat(sunY) + Math.sin(earthAngle) * 80  + 'px'
+earth.style.left = earthX
+earth.style.top = earthY
+
+
+let moonAngle = time / 200
+let moonX = parseFloat(earthX) + Math.cos(moonAngle) * 40 + 'px'
+let moonY = parseFloat(earthY) + Math.sin(moonAngle) * 40 + 'px'
+moon.style.left = moonX
+moon.style.top = moonY
+
+requestAnimationFrame(animate)
+})
+
+
+
+
+  </script>
+</body>
+
+</html>
