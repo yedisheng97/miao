@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    body {
+      margin: 10px;
+    }
+
+    section {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      width: 600px;
+      margin: auto;
+    }
+
+    section div {
+      flex: 1;
+
+    }
+
+    img {
+      display: block;
+      margin-bottom: 10px;
+      outline: 1px solid white;
+    }
+  </style>
+</head>
+<body>
+  <section>
+  </section>
+  <script>
+    const cats = [
+      {
+        "url": "photo-103450229.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/photo-103450229.jpg",
+        "width": 675,
+        "height": 900
+      },
+      {
+        "url": "photo-108273877.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/photo-108273877.jpg",
+        "width": 1170,
+        "height": 780
+      },
+      {
+        "url": "photo-115203323.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/photo-115203323.jpg",
+        "width": 1170,
+        "height": 780
+      },
+      {
+        "url": "photo-23583825.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/photo-23583825.jpg",
+        "width": 2048,
+        "height": 1536
+      },
+      {
+        "url": "stock-photo-123942383.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-123942383.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "stock-photo-124559545.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-124559545.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "stock-photo-132046989.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-132046989.jpg",
+        "width": 1170,
+        "height": 780
+      },
+      {
+        "url": "stock-photo-132118343.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-132118343.jpg",
+        "width": 2000,
+        "height": 1339
+      },
+      {
+        "url": "stock-photo-132311221.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-132311221.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "stock-photo-132586903.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-132586903.jpg",
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "url": "stock-photo-135203031.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-135203031.jpg",
+        "width": 1000,
+        "height": 668
+      },
+      {
+        "url": "stock-photo-135626379.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-135626379.jpg",
+        "width": 2000,
+        "height": 1500
+      },
+      {
+        "url": "stock-photo-136947953.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-136947953.jpg",
+        "width": 2000,
+        "height": 1348
+      },
+      {
+        "url": "stock-photo-138378295.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-138378295.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "url": "stock-photo-138436811.jpg",
+        "fullUrl": "https://xieranmaya.github.io/images/cats/stock-photo-138436811.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+
+    ]
+
+    function run() {
+      let columns = Math.floor((window.innerWidth - 60) / 180)
+      const section = document.querySelector('section')
+      section.style.width = columns * 180 + (columns - 1) * 10 + 'px'
+      section.innerHTML = ''
+      for (let i = 0; i < columns; i++) {
+        section.append(document.createElement('div'))
+      }
+
+      const divs = [...section.querySelectorAll('div')]
+
+      for (let cat of cats) {
+        let div = divs.reduce((min, div) => {
+          if (div.offsetHeight < min.offsetHeight) {
+            return div
+          } else {
+            return min
+          }
+        })
+
+        const img = document.createElement('img')
+        img.src = cat.fullUrl
+        img.width = div.offsetWidth
+        img.height = div.offsetWidth * cat.height / cat.width
+        div.append(img)
+      }
+    }
+    run()
+
+    window.onresize = run
+
+  </script>
+</body>
+</html>
