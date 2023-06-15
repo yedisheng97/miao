@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./fonts/remixicon.css">
   <title>Document</title>
   <style>
-
     div {
       width: 300px;
       height: 300px;
@@ -17,76 +16,85 @@
       align-items: center;
     }
 
-    .sma{
-      position: absolute;
+    #sun{
+      width: 50px;
+    }
+
+    #earth{
+      width: 30px;
+    }
+
+    #moon{
+      width: 15px;
+    }
+
+    #sun,
+    #earth,
+    #moon {
+      position: fixed;
+      aspect-ratio: 1 / 1;
+      transform: translate(-50%, -50%);
     }
 
     .ri-earth-line {
       font-size: 30px;
-      position: absolute;
-      margin: 150px;
     }
 
     .ri-sun-fill {
-      font-size: 60px;
-      position: absolute
+      font-size: 50px;
     }
 
     .ri-moon-line {
       font-size: 15px;
-      position: absolute;
     }
   </style>
 </head>
 
 <body>
   <div>
-    <i class="ri-sun-fill"></i>
-    <div class="sma">
-      <i class="ri-earth-line">
-        <i class="ri-moon-line"></i>
-      </i>
-    </div>
-
+    <span id="sun">
+      <i class="ri-sun-fill"></i>
+    </span>
+    <span id="earth">
+      <i class="ri-earth-line"></i>
+    </span>
+    <span id="moon">
+      <i class="ri-moon-line"></i>
+    </span>
   </div>
 
 
-
   <script>
-    const earth = document.querySelector(".sma");
-    const moon = document.querySelector('.ri-moon-line')
-    let angle = 0
-    let lastTime = null;
+    const earth = document.querySelector("#earth");
+    const moon = document.querySelector('#moon')
 
-    function animate(time) {
-      time = Date.now()
+    requestAnimationFrame(function animate(time) {
 
-      if (lastTime != null)
-        angle += (time - lastTime) * 0.001;
+let sunAngle = time / 2000
+let sunX = 150 + 'px'
+let sunY = 150 + 'px'
+sun.style.left = sunX
+sun.style.top = sunY
 
-      lastTime = time;
 
-      earth.style.top = (Math.sin(angle) * 150) + "px";
-      earth.style.left = (Math.cos(angle) * 150) + "px";
+let earthAngle = time / 500
+let earthX = parseFloat(sunX) + Math.cos(earthAngle) * 80  + 'px'
+let earthY = parseFloat(sunY) + Math.sin(earthAngle) * 80  + 'px'
+earth.style.left = earthX
+earth.style.top = earthY
 
-      setTimeout(animate, 100);
-    }
 
-    function animate2(time) {
-      time = Date.now()
+let moonAngle = time / 200
+let moonX = parseFloat(earthX) + Math.cos(moonAngle) * 40 + 'px'
+let moonY = parseFloat(earthY) + Math.sin(moonAngle) * 40 + 'px'
+moon.style.left = moonX
+moon.style.top = moonY
 
-      if (lastTime != null)
-        angle += (time - lastTime) * 0.001;
+requestAnimationFrame(animate)
+})
 
-      lastTime = time;
 
-      moon.style.top = (Math.sin(angle) * 50) + "px";
-      moon.style.left = (Math.cos(angle) * 50) + "px";
 
-      setTimeout(animate2, 100);
-    }
-    setTimeout(animate, 100);
-    setTimeout(animate2, 200);
 
   </script>
 </body>
