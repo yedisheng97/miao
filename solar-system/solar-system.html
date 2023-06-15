@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./fonts/remixicon.css">
+  <title>Document</title>
+  <style>
+
+    div {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sma{
+      position: absolute;
+    }
+
+    .ri-earth-line {
+      font-size: 30px;
+      position: absolute;
+      margin: 150px;
+    }
+
+    .ri-sun-fill {
+      font-size: 60px;
+      position: absolute
+    }
+
+    .ri-moon-line {
+      font-size: 15px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <i class="ri-sun-fill"></i>
+    <div class="sma">
+      <i class="ri-earth-line">
+        <i class="ri-moon-line"></i>
+      </i>
+    </div>
+
+  </div>
+
+
+
+  <script>
+    const earth = document.querySelector(".sma");
+    const moon = document.querySelector('.ri-moon-line')
+    let angle = 0
+    let lastTime = null;
+
+    function animate(time) {
+      time = Date.now()
+
+      if (lastTime != null)
+        angle += (time - lastTime) * 0.001;
+
+      lastTime = time;
+
+      earth.style.top = (Math.sin(angle) * 150) + "px";
+      earth.style.left = (Math.cos(angle) * 150) + "px";
+
+      setTimeout(animate, 100);
+    }
+
+    function animate2(time) {
+      time = Date.now()
+
+      if (lastTime != null)
+        angle += (time - lastTime) * 0.001;
+
+      lastTime = time;
+
+      moon.style.top = (Math.sin(angle) * 50) + "px";
+      moon.style.left = (Math.cos(angle) * 50) + "px";
+
+      setTimeout(animate2, 100);
+    }
+    setTimeout(animate, 100);
+    setTimeout(animate2, 200);
+
+  </script>
+</body>
+
+</html>
