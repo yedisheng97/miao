@@ -431,14 +431,17 @@
 
     window.onresize = run
 
+
+    let scrollTop = 0
+
     let z = 1
     section.addEventListener('click', (e) => {
       if (e.target.matches('img')) {
 
         const clickedImg = e.target
+        const clickedImgBox = clickedImg.getBoundingClientRect()
 
         if (clickedImg.style.transform == '') {
-          const clickedImgBox = clickedImg.getBoundingClientRect()
 
           //点击的图片
           const clickedImgX = clickedImgBox.left + clickedImgBox.width / 2
@@ -463,6 +466,23 @@
         } else {
           clickedImg.style.transform = ''
           clickedImg.style.boxShadow = ''
+        }
+
+        window.addEventListener('scroll', () => {
+
+          console.log(scrollTop);
+          console.log(document.documentElement.scrollTop);
+
+          if (document.documentElement.scrollTop - scrollTop >= window.innerHeight / 2
+            || document.documentElement.scrollTop - scrollTop < -(window.innerHeight / 2)) {
+            clickedImg.style.transform = ''
+            clickedImg.style.boxShadow = ''
+          }
+        })
+
+        scrollTop = document.documentElement.scrollTop
+        if(clickedImg.style.transform =='') {
+          clickedImg.style.zIndex = 1
         }
       }
     })
