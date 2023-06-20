@@ -5,29 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    div {
+      left: 50px;
+      top: 50px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      background-color: #fff8;
+    }
+  </style>
 </head>
 
 <body>
-  <box id="box1" style="width: 100px; height: 100px; background-color: rgb(88, 128, 215); position: absolute;"></box>
-  <box id="box2"
-    style="width: 100px; height: 100px; background-color: rgb(200, 209, 100); position: absolute; left : 150px"></box>
-  <box id="box3"
-    style="width: 100px; height: 100px; background-color: rgb(71, 194, 136); position: absolute; left:300px"></box>
+  <div id="box" style="width: 150px; height: 150px;background-color: rgb(209, 100, 105); position: absolute;">
+    <h1>窗口1</h1>
+  </div>
+  <div id="box"
+    style="width: 150px; height: 150px; background-color: rgb(200, 209, 100); position: absolute; left : 220px">
+    <h1>窗口2</h1>
+  </div>
+  <div id="box"
+    style="width: 150px; height: 150px; background-color: rgb(71, 194, 136); position: absolute; left:390px">
+    <h1>窗口3</h1>
+  </div>
 
 
   <script>
-
-    const box1 = document.querySelector('#box1')
-    const box2 = document.querySelector('#box2')
-    const box3 = document.querySelector('#box3')
-
 
     let z = 1
     let x = 0
     let y = 0
     window.addEventListener('mousedown', e => {
-      if (e.target.matches('#box1') || e.target.matches('#box2') || e.target.matches('#box3')) {
+      if (e.target.matches('#box > h1')) {
         e.preventDefault()
+
+        el = e.target.parentNode
+        el.style.zIndex = z++
+
         x = e.offsetX
         y = e.offsetY
         window.addEventListener('mousemove', move)
@@ -40,18 +63,18 @@
 
       if (e.which == 0 || e.buttons == 0) {
         window.removeEventListener('mousemove', move)
-        if (left > 0 && left <= 50) {
-          e.target.style.left = 0
+        if (left > 0 && left <= 40) {
+         el.style.left = 0
         }
-        if(left > window.innerWidth - 150) {
-          e.target.style.left = window.innerWidth - 100 + 'px'
+        if (left > window.innerWidth - 140) {
+         el.style.left = window.innerWidth - 100 + 'px'
         }
 
-        if (top > 0 && top <= 50) {
-          e.target.style.top = 0
+        if (top > 0 && top <= 40) {
+         el.style.top = 0
         }
-        if(top > window.innerHeight - 150) {
-          e.target.style.top = window.innerHeight - 100 + 'px'
+        if (top > window.innerHeight - 140) {
+         el.style.top = window.innerHeight - 100 + 'px'
         }
       } else {
         if (left < 0) {
@@ -67,9 +90,9 @@
           top = window.innerHeight - 100
         }
 
-        e.target.style.left = left + 'px'
-        e.target.style.top = top + 'px'
-        e.target.style.zIndex = z++
+        el.style.left = left + 'px'
+        el.style.top = top + 'px'
+
       }
     }
 
