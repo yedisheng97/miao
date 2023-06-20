@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <box id="box1" style="width: 100px; height: 100px; background-color: rgb(88, 128, 215); position: absolute;"></box>
+  <box id="box2"
+    style="width: 100px; height: 100px; background-color: rgb(200, 209, 100); position: absolute; left : 150px"></box>
+  <box id="box3"
+    style="width: 100px; height: 100px; background-color: rgb(71, 194, 136); position: absolute; left:300px"></box>
+
+
+  <script>
+
+    const box1 = document.querySelector('#box1')
+    const box2 = document.querySelector('#box2')
+    const box3 = document.querySelector('#box3')
+
+
+    let z = 1
+    let x = 0
+    let y = 0
+    window.addEventListener('mousedown', e => {
+      if (e.target.matches('#box1') || e.target.matches('#box2') || e.target.matches('#box3')) {
+        e.preventDefault()
+        x = e.offsetX
+        y = e.offsetY
+        window.addEventListener('mousemove', move)
+      }
+    })
+
+    function move(e) {
+      let left = e.clientX - x
+      let top = e.clientY - y
+
+      if (e.which == 0 || e.buttons == 0) {
+        window.removeEventListener('mousemove', move)
+        if (left > 0 && left <= 50) {
+          e.target.style.left = 0
+        }
+        if(left > window.innerWidth - 150) {
+          e.target.style.left = window.innerWidth - 100 + 'px'
+        }
+
+        if (top > 0 && top <= 50) {
+          e.target.style.top = 0
+        }
+        if(top > window.innerHeight - 150) {
+          e.target.style.top = window.innerHeight - 100 + 'px'
+        }
+      } else {
+        if (left < 0) {
+          left = 0
+        }
+        if (left > window.innerWidth - 100) {
+          left = window.innerWidth - 100
+        }
+        if (top < 0) {
+          top = 0
+        }
+        if (top > window.innerHeight - 100) {
+          top = window.innerHeight - 100
+        }
+
+        e.target.style.left = left + 'px'
+        e.target.style.top = top + 'px'
+        e.target.style.zIndex = z++
+      }
+    }
+
+    // box1.addEventListener('mousedown', e => {
+    //   flag = true
+    //   let x = e.offsetX
+    //   let y = e.offsetY
+    //   box1.addEventListener('mousemove', e => {
+    //     if (flag) {
+    //       console.log(e.clientX,e.clientY);
+    //       box1.style.top = e.clientY - y + 'px'
+    //       box1.style.left = e.clientX - x + 'px'
+    //       box1.style.zIndex = z++
+    //     }
+    //   })
+    // })
+    // box1.addEventListener('mouseup', () => {
+    //   flag = false
+    // })
+
+    // box2.addEventListener('mousedown', e => {
+    //   flag = true
+    //   let x = e.offsetX
+    //   let y = e.offsetY
+    //   box2.addEventListener('mousemove', e => {
+    //     if (flag) {
+    //       box2.style.top = e.clientY - y + 'px'
+    //       box2.style.left = e.clientX - x + 'px'
+    //       box2.style.zIndex = z++
+    //     }
+    //   })
+    // })
+    // box2.addEventListener('mouseup', () => {
+    //   flag = false
+    // })
+
+    // box3.addEventListener('mousedown', e => {
+    //   flag = true
+    //   let x = e.offsetX
+    //   let y = e.offsetY
+    //   box3.addEventListener('mousemove', e => {
+    //     if (flag) {
+    //       box3.style.top = e.clientY - y + 'px'
+    //       box3.style.left = e.clientX - x + 'px'
+    //       box3.style.zIndex = z++
+    //     }
+    //   })
+    // })
+    // box3.addEventListener('mouseup', () => {
+    //   flag = false
+    // })
+
+  </script>
+</body>
+
+</html>
